@@ -25,10 +25,10 @@ $region = getenv('GATEWAY_REGION');
 $apiVersion = getenv('GATEWAY_API_VERSION');
 
 // merchant id must be TEST
-$merchantIdPrefix = substr($merchantId, 0, 4);
-if (strcasecmp($merchantIdPrefix, "test") != 0) {
-    error(500, 'Only TEST merchant IDs should be used with this software');
-}
+//$merchantIdPrefix = substr($merchantId, 0, 4);
+//if (strcasecmp($merchantIdPrefix, "test") != 0) {
+//    error(500, 'Only TEST merchant IDs should be used with this software');
+//}
 
 // get regional url prefix
 $prefix = 'mtf.';
@@ -56,7 +56,7 @@ if (intval($apiVersion) < 39) {
 }
 
 // build api endpoint url
-$gatewayUrl = "https://${prefix}gateway.mastercard.com/api/rest/version/${apiVersion}/merchant/${merchantId}";
+$gatewayUrl = "https://test-anb.${prefix}gateway.mastercard.com/api/rest/version/${apiVersion}/merchant/${merchantId}";
 
 // parse query string
 $query = array();
